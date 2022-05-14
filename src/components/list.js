@@ -9,7 +9,7 @@ function ShowQuestions(props) {
   const [answer, setAnswer] = useState("");
   const [selectedAnswer, setSelectedAnswer] = useState();
   const [result, setResult] = useState(0);
-  const [isOver, setIsOver] = useState(false);
+  const [final, setIsOver] = useState(false);
   const { quizId } = useParams();
 
   useEffect(() => {
@@ -69,7 +69,7 @@ function ShowQuestions(props) {
 
   return (
     <div>
-      {isOver ? (
+      {final ? (
         <>
           <div className="main">
             <div className="card-body">

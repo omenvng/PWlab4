@@ -26,28 +26,14 @@ function Quizes() {
    
     return (
         <div className="mainQuizes">
-                <div className="main-name">
-                    <h1 className="titlee"></h1>
-                </div>
-                    
-                <div className="quizes-here">
+                <div className="main-name"><h1 className="title1"></h1></div> <div className="quizes-here">
                     {quizzes.map(quiz => (
                         <Link to={`/quizzes/${quiz.id}`}>
-                        <div className='quiz' key={quiz.id} >
-                            <h2 className="titlee">Quiz </h2>
-                            <p className="title"> {quiz.title}</p>
-                            <p className="title"> Questions:№{quiz.questions_count}</p>
-                            
-                            
-                        </div>
+                        <div className='quiz' key={quiz.id} ><h2 className="title1">Quiz </h2>
+                        <p className="title"> {quiz.title}</p><p className="title"> Questions:№{quiz.questions_count}</p></div>
                          </Link>
-                         
-                    ))}
-                </div>
-                
-            </div>
-        )
-    
+                          ))}
+                </div></div>
+        ) 
 }
-
 export default Quizes;

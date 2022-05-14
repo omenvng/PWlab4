@@ -41,8 +41,7 @@ const [secondn, setSurname] = useState("")
         <div className="main">
             <div className="login-div"><form className="login-form" onSubmit={submitHandler}>
                 <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png" class="image2"></img><h1>Sign Up</h1>
-                
-                    <input type="text" name="name" className="name" placeholder="Username" 
+                 <input type="text" name="name" className="name" placeholder="Username" 
                         value={name} onChange={(e)=>setName(e.target.value)}/>
                     <input type="text" name="surname" className="surname" placeholder="Password" 
                         value={secondn} onChange={(e)=>setSurname(e.target.value)}/>
