@@ -30,9 +30,11 @@ body, * {
 }
 
 .quiz {
-  margin: 20px 60px;
+  margin: 30px 60px;
   align-items: center;
-  background: #f7dbdb3e;
+  /*ackground-image: url(./img/22.png); */
+  background-size: 100% 100%;
+  background-color: #c920203e;
   color: black;
   border: 2px solid #E7AA01;
   border-radius: 50px;
@@ -194,7 +196,7 @@ a {
   gap: 30px;
   height: auto;
   padding: 30px;
-  background-color: #f7dbdb3e;
+  background-color: #c920203e;
   width: auto;
   border-radius: 20px;
   color: rgb(255, 255, 255);
@@ -297,6 +299,8 @@ input[type=radio]
 .title {
   font-weight: bold;
   color: wheat;
+  font-size: 25px;
+  font-weight: 400;
 }
 
 .titlee {

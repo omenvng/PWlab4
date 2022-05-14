@@ -36,7 +36,7 @@ function Quizes() {
                         <div className='quiz' key={quiz.id} >
                             <h2 className="titlee">Quiz </h2>
                             <p className="title"> {quiz.title}</p>
-                            <p className="title">Questions: №{quiz.questions_count}</p>
+                            <p className="title"> Questions:№{quiz.questions_count}</p>
                             
                             
                         </div>
