@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import "../App.css"
 
 function ShowQuestions(props) {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currIndex, setCurrentIndex] = useState(0);
   const [answer, setAnswer] = useState("");
   const [selectedAnswer, setSelectedAnswer] = useState();
   const [result, setResult] = useState(0);
@@ -26,7 +26,7 @@ function ShowQuestions(props) {
 
   const nextQuestion = () => {
     const userIdNoRepeat = parseInt(localStorage.getItem("user-info"));
-    const questionIdNoRepeat = props.questions[currentIndex].id;
+    const questionIdNoRepeat = props.questions[currIndex].id;
 
     console.log(userIdNoRepeat);
     console.log(questionIdNoRepeat);
@@ -59,7 +59,7 @@ function ShowQuestions(props) {
       });
 
     
-    if (currentIndex === props?.questions.length - 1) {
+    if (currIndex === props?.questions.length - 1) {
       setIsOver(true);
       console.log(result);
     } else {
@@ -70,36 +70,23 @@ function ShowQuestions(props) {
   return (
     <div>
       {final ? (
-        <>
-          <div className="main">
-            <div className="card-body">
-              <h3 className="card-title">Final result</h3>
-              <h2 className="card-subtitle">
-                {result} out of {props?.questions.length}{" "}
-              </h2>
-              <Link to={`/main`}>
-              <button className="start-quiz">
-                Return
-              </button>
-              </Link>
+        <><div className="main"><div className="card-body"><h3 className="card-title">Final result</h3><h2 className="card-subtitle">
+                {result} out of {props?.questions.length}{" "}</h2>
+              <Link to={`/main`}><button className="start-quiz">Return</button></Link>
             </div>
           </div>
         </>
       ) : (
         <>
-          <div className="main">
-            <div className="pass-quiz-card">
-            <h2 className="res">
-                {result} / {props?.questions.length}{" "}
-              </h2>
-              {props?.questions[currentIndex]?.question}
+          <div className="main"><div className="pass-quiz-card"> <h2 className="res">{result} / {props?.questions.length}{" "}</h2>
+              {props?.questions[currIndex]?.question}
               <div className="answers ">
-                {props?.questions[currentIndex]?.answers.map(
+                {props?.questions[currIndex]?.answers.map(
                   (answer, index) => (
                     <div className="question-answers" key={index}>
                       <input
                         type="radio"
-                        name={props.questions[currentIndex].question}
+                        name={props.questions[currIndex].question}
                         value={answer}
                         onClick={(event) => handleAnswers(event)}
                       />
@@ -108,11 +95,7 @@ function ShowQuestions(props) {
                     </div>
                   )
                 )}
-                <button className="start-quiz" onClick={() => nextQuestion()}>
-                  Next 
-                </button>
-              </div>
-            </div>
+                <button className="start-quiz" onClick={() => nextQuestion()}>  Next </button></div></div>
           </div>
         </>
       )}
